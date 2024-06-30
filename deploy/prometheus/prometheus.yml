@@ -1,0 +1,26 @@
+global:
+  # scrape_interval: 15s
+  scrape_interval: 1s # makes for a good demo
+
+scrape_configs:
+  - job_name: "frontend"
+    static_configs:
+      #- targets: ["host.docker.internal:7243"] # hard-coded port matches launchSettings.json- job_name: 'weatherapp'
+      - targets: ["host.docker.internal:5296"] # hard-coded port matches launchSettings.json- job_name: 'weatherapp'
+  - job_name: "weatherapi"
+    static_configs:
+      #- targets: ["host.docker.internal:7478"] # hard-coded port matches launchSettings.json
+      - targets: ["host.docker.internal:5462"] # hard-coded port matches launchSettings.json
+
+# scrape_configs:
+#   - job_name: "prometheus"
+#     static_configs:
+#       - targets: ["localhost:9090"]
+
+#   - job_name: "apiservice"
+#     static_configs:
+#       - targets: ["apiservice:80"]
+
+#   - job_name: "webfrontend"
+#     static_configs:
+#       - targets: ["webfrontend:80"]
